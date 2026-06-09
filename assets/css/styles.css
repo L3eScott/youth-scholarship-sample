@@ -98,13 +98,11 @@ nav {
 }
 .brand:hover { color: var(--gold-light); }
 .brand img.logo-mark {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
-  border-radius: 50%;
-  background: var(--cream);
-  padding: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 0 0 1px var(--gold);
+  border-radius: 6px;
+  background: transparent;
 }
 .brand .brand-name { line-height: 1.1; }
 .brand .brand-name small {
@@ -608,13 +606,10 @@ footer a:hover { color: var(--gold-light); }
   margin-bottom: 12px;
 }
 .footer-brand img {
-  width: 58px;
-  height: 58px;
+  width: 54px;
+  height: 54px;
   object-fit: contain;
-  border-radius: 50%;
-  background: var(--cream);
-  padding: 5px;
-  box-shadow: 0 0 0 1px var(--gold);
+  border-radius: 6px;
 }
 .footer-brand-name { color: var(--ivory); font-weight: 800; font-size: 17px; font-family: "Playfair Display", serif; }
 .footer-bottom {
