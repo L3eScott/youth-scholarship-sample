@@ -28,6 +28,28 @@ body {
   color: var(--text);
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* ─── Watermark — subtle logo, fixed bottom-right ─────────────────── */
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 220px;
+  height: 220px;
+  background: url("../images/sj-logo.jpg") center/contain no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+  filter: saturate(1.2);
+}
+@media (max-width: 880px) {
+  body::after { width: 140px; height: 140px; bottom: 18px; right: 18px; opacity: 0.05; }
+}
+@media print {
+  body::after { display: none; }
 }
 
 a { color: var(--navy-mid); text-decoration: none; transition: color 0.15s ease; }
