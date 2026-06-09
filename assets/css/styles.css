@@ -41,19 +41,16 @@ body::after {
   width: min(72vw, 720px);
   height: min(72vw, 720px);
   background: url("../images/sj-logo-transparent.png") center/contain no-repeat;
-  opacity: 0.08;
+  opacity: 0.11;
   pointer-events: none;
   z-index: 0;
 }
-/* Ensure content layers ABOVE the watermark */
 header, main, footer { position: relative; z-index: 1; }
 header { z-index: 100; }
 @media (max-width: 880px) {
-  body::after { width: min(90vw, 460px); height: min(90vw, 460px); opacity: 0.07; }
+  body::after { width: min(90vw, 460px); height: min(90vw, 460px); opacity: 0.10; }
 }
-@media print {
-  body::after { display: none; }
-}
+@media print { body::after { display: none; } }
 
 a { color: var(--navy-mid); text-decoration: none; transition: color 0.15s ease; }
 a:hover { color: var(--gold); }
@@ -153,11 +150,10 @@ nav ul a.cta:hover { background: var(--gold-light); color: var(--navy); }
   cursor: pointer;
 }
 
-/* ─── Hero — bright cream with prominent logo ───────────────────────── */
+/* ─── Hero — transparent so watermark shows through ─────────────────── */
 .hero {
   background:
-    radial-gradient(ellipse at top, rgba(200,146,42,0.08) 0%, transparent 60%),
-    linear-gradient(180deg, var(--cream) 0%, var(--cream-soft) 100%);
+    radial-gradient(ellipse at top, rgba(200,146,42,0.10) 0%, transparent 60%);
   padding: 72px 24px 84px;
   text-align: center;
   position: relative;
@@ -262,9 +258,10 @@ nav ul a.cta:hover { background: var(--gold-light); color: var(--navy); }
 /* ─── Sections ─────────────────────────────────────────────────────── */
 .section {
   padding: 72px 24px;
+  background: transparent;
 }
-.section.alt { background: var(--cream-soft); }
-.section.ivory { background: var(--ivory); }
+.section.alt { background: rgba(247, 241, 225, 0.55); }
+.section.ivory { background: rgba(255, 255, 255, 0.65); }
 .section .inner { max-width: 1100px; margin: 0 auto; }
 .section-head {
   text-align: center;
@@ -471,8 +468,7 @@ nav ul a.cta:hover { background: var(--gold-light); color: var(--navy); }
 /* ─── Page hero (interior pages, smaller) ──────────────────────────── */
 .page-hero {
   background:
-    radial-gradient(ellipse at top, rgba(200,146,42,0.07) 0%, transparent 60%),
-    linear-gradient(180deg, var(--cream) 0%, var(--cream-soft) 100%);
+    radial-gradient(ellipse at top, rgba(200,146,42,0.09) 0%, transparent 60%);
   padding: 48px 24px 48px;
   text-align: center;
   border-bottom: 1px solid var(--line);
