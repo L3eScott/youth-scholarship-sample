@@ -31,22 +31,25 @@ body {
   position: relative;
 }
 
-/* ─── Watermark — subtle logo, fixed bottom-right ─────────────────── */
+/* ─── Watermark — centered transparent logo, fixed (doesn't scroll) ── */
 body::after {
   content: "";
   position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 220px;
-  height: 220px;
-  background: url("../images/sj-logo.jpg") center/contain no-repeat;
-  opacity: 0.06;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(72vw, 720px);
+  height: min(72vw, 720px);
+  background: url("../images/sj-logo-transparent.png") center/contain no-repeat;
+  opacity: 0.08;
   pointer-events: none;
   z-index: 0;
-  filter: saturate(1.2);
 }
+/* Ensure content layers ABOVE the watermark */
+header, main, footer { position: relative; z-index: 1; }
+header { z-index: 100; }
 @media (max-width: 880px) {
-  body::after { width: 140px; height: 140px; bottom: 18px; right: 18px; opacity: 0.05; }
+  body::after { width: min(90vw, 460px); height: min(90vw, 460px); opacity: 0.07; }
 }
 @media print {
   body::after { display: none; }
