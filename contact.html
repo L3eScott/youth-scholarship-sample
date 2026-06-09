@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | SJ Youth Ministry</title>
+  <meta name="description" content="Contact the SJ Youth Ministry of St. James Baptist Church. Questions about applying, mentoring, or donating — we'd love to hear from you.">
+  <link rel="canonical" href="https://youth-scholarship.example.org/contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="brand"><span class="mark">🎓</span><span>SJ Youth Ministry</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" class="cta">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <img class="hero-logo" src="assets/images/sj-logo.jpg" alt="St. James Baptist Church logo">
+      <h1>Contact Us</h1>
+      <p>Questions about applying, mentoring, donating — or anything else — we're listening.</p>
+    </section>
+
+    <section class="section">
+      <div class="inner">
+        <div class="visit-grid">
+
+          <div class="visit-block">
+            <h3>Reach Us</h3>
+            <p><strong>Phone:</strong> <a href="tel:2259241550">(225) 924-1550</a><br>
+            <strong>Email:</strong> <a href="mailto:scholarship@stjamesbaptistchurch.org">scholarship@stjamesbaptistchurch.org</a></p>
+
+            <p><strong>Mail:</strong><br>
+            St. James Baptist Church<br>
+            ATTN: SJ Youth Ministry<br>
+            1105 North 44th St.<br>
+            Baton Rouge, LA 70802</p>
+
+            <h3 style="margin-top: 32px;">Office Hours</h3>
+            <p>{{OFFICE_HOURS — e.g., "Tuesday–Thursday, 9 AM–2 PM at the church office. Call ahead."}}</p>
+
+            <h3 style="margin-top: 32px;">Committee Chair</h3>
+            <p>{{COMMITTEE_CHAIR_NAME}}<br>
+            <a href="mailto:{{COMMITTEE_CHAIR_EMAIL}}">{{COMMITTEE_CHAIR_EMAIL}}</a></p>
+            <p style="color: var(--text-light); font-size: 14px;">For application questions, mentorship inquiries, or sponsorship conversations.</p>
+          </div>
+
+          <div class="visit-block">
+            <h3>Send Us a Message</h3>
+            <p style="color: var(--text-light); font-size: 14px;">Whatever it's about — applying, mentoring, donating, or just learning more — we'll respond within 2 business days.</p>
+
+            <form>
+              <div>
+                <label for="c-name">Your Name</label>
+                <input type="text" id="c-name" name="name" required>
+              </div>
+              <div>
+                <label for="c-email">Email</label>
+                <input type="email" id="c-email" name="email" required>
+              </div>
+              <div>
+                <label for="c-phone">Phone (optional)</label>
+                <input type="tel" id="c-phone" name="phone">
+              </div>
+              <div>
+                <label for="c-topic">What's this about?</label>
+                <select id="c-topic" name="topic">
+                  <option>Applying for a scholarship</option>
+                  <option>Becoming a mentor</option>
+                  <option>Donating</option>
+                  <option>Named sponsorship</option>
+                  <option>Volunteering on the committee</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div>
+                <label for="c-msg">Your Message</label>
+                <textarea id="c-msg" name="message" required></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+              <p class="form-note">Your message goes to the committee chair and we respond within 2 business days.</p>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="callout" style="margin-top: 56px;">
+          <h3>Connected to St. James Baptist Church</h3>
+          <p>The SJ Youth Ministry is part of the wider ministry of St. James Baptist Church. To learn more about our church family, visit <a href="../stjames-baptist-sample/index.html">stjamesbaptist.example.org</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/images/sj-logo.jpg" alt="SJ Youth Ministry logo">
+            <span class="footer-brand-name">SJ Youth Ministry</span>
+          </div>
+          <p>A ministry of St. James Baptist Church<br>1105 North 44th St., Baton Rouge, LA 70802</p>
+          <p><a href="tel:2259241550">(225) 924-1550</a><br><a href="mailto:scholarship@stjamesbaptistchurch.org">scholarship@stjamesbaptistchurch.org</a></p>
+          <div class="social"><a href="#" title="Facebook (placeholder)" aria-label="Facebook">f</a></div>
+        </div>
+        <div><h4>Ministry</h4><ul><li><a href="about.html">About</a></li><li><a href="apply.html">Apply</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+        <div><h4>Connect</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="../stjames-baptist-sample/index.html">St. James Church</a></li></ul></div>
+        <div><h4>Tax Info</h4><ul><li>501(c)(3) under St. James Baptist Church</li><li>EIN: {{EIN}}</li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 St. James Baptist Church SJ Youth Ministry.</span><span class="build-credit">Built with care by Digital Ops Systems.</span></div>
+    </div>
+  </footer>
+
+  <script>document.querySelector('.nav-toggle')?.addEventListener('click', () => document.querySelector('nav ul').classList.toggle('open'));</script>
+
+</body>
+</html>

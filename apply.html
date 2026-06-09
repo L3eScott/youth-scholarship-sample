@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply for a Scholarship | SJ Youth Ministry</title>
+  <meta name="description" content="Apply for a scholarship from the SJ Youth Ministry of St. James Baptist Church. Eligibility, application requirements, and the form to get started.">
+  <link rel="canonical" href="https://youth-scholarship.example.org/apply.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="brand"><span class="mark">🎓</span><span>SJ Youth Ministry</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" class="cta">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <img class="hero-logo" src="assets/images/sj-logo.jpg" alt="St. James Baptist Church logo">
+      <h1>Apply for a Scholarship</h1>
+      <p>Here's everything you need to know and how to start.</p>
+    </section>
+
+    <section class="section">
+      <div class="inner" style="max-width: 820px;">
+
+        <div class="callout">
+          <h3>This year's application is {{APPLICATION_STATUS — "open through MM/DD/YYYY" / "currently closed, opens again in spring"}}.</h3>
+          <p>{{APPLICATION_STATUS_DETAIL}}</p>
+        </div>
+
+        <h2 style="margin-top: 48px;">Who Can Apply</h2>
+        <ul style="line-height: 2; color: var(--text-light);">
+          <li><strong>Graduating high school seniors</strong> heading to college, community college, trade school, or certification program.</li>
+          <li><strong>Current college or trade school students</strong> who need help covering tuition, books, or fees.</li>
+          <li><strong>Adults returning to school</strong> — finishing a degree, starting a new career, or getting certified.</li>
+        </ul>
+        <p>You don't need to be a member of St. James Baptist Church. You need to have some connection to our community.</p>
+
+        <h2 style="margin-top: 48px;">What You'll Need</h2>
+        <p>Before you start the application, gather these:</p>
+        <ol style="line-height: 2; color: var(--text-light);">
+          <li><strong>A short essay</strong> (one page is plenty). Tell us about you: what you're planning to study, why, and what you'd do with this opportunity.</li>
+          <li><strong>One letter of recommendation</strong> from someone who knows you and isn't a family member. A teacher, a coach, a pastor, a boss, a coworker.</li>
+          <li><strong>Proof of enrollment</strong> or acceptance letter from the school you're attending (or planning to).</li>
+          <li><strong>Cost summary</strong> from the school — tuition, books, fees. Whatever they invoice.</li>
+          <li><strong>Your contact info</strong> — name, phone, email, and one parent or guardian's contact if you're under 18.</li>
+        </ol>
+        <p style="color: var(--text-light); font-size: 14px;"><em>If any of these feel hard to put together — call us. We'd rather help you put together a complete application than have you give up because of a logistics problem.</em></p>
+
+        <h2 style="margin-top: 48px;">How to Apply</h2>
+        <ol style="line-height: 2; color: var(--text-light);">
+          <li>Fill out the application form below (or download the PDF).</li>
+          <li>Send your essay, recommendation, proof of enrollment, and cost summary by email to <a href="mailto:scholarship@stjamesbaptistchurch.org">scholarship@stjamesbaptistchurch.org</a> &mdash; or drop them off at the church office.</li>
+          <li>We'll confirm we received everything within 3 business days.</li>
+          <li>The committee reviews applications {{REVIEW_TIMING — e.g., "in late April"}}.</li>
+          <li>Decisions go out by {{DECISION_DATE — e.g., "May 15"}}.</li>
+        </ol>
+
+        <div class="callout" style="margin-top: 40px; background: var(--cream);">
+          <h3>Scholarship Application</h3>
+          <p style="color: var(--text-light); font-size: 14px;">All fields are required unless marked optional. Your information is private and used only for the application review.</p>
+          <form style="margin-top: 20px;">
+            <div class="form-row">
+              <div>
+                <label for="app-name">Full Name</label>
+                <input type="text" id="app-name" name="name" required>
+              </div>
+              <div>
+                <label for="app-age">Age</label>
+                <input type="number" id="app-age" name="age" min="14" max="80" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="app-email">Email</label>
+                <input type="email" id="app-email" name="email" required>
+              </div>
+              <div>
+                <label for="app-phone">Phone</label>
+                <input type="tel" id="app-phone" name="phone" required>
+              </div>
+            </div>
+            <div>
+              <label for="app-school">School or Program You're Attending (or Planning To)</label>
+              <input type="text" id="app-school" name="school" placeholder="e.g., LSU Baton Rouge, Diesel Tech program at BRCC" required>
+            </div>
+            <div>
+              <label for="app-field">What Are You Studying?</label>
+              <input type="text" id="app-field" name="field" placeholder="e.g., Nursing, Electrical, Business" required>
+            </div>
+            <div>
+              <label for="app-start">When Do You Start (or Did You Start)?</label>
+              <input type="text" id="app-start" name="start" placeholder="e.g., Fall 2026" required>
+            </div>
+            <div>
+              <label for="app-need">Briefly: Why This Scholarship Would Matter</label>
+              <textarea id="app-need" name="need" placeholder="A few sentences. Don't overthink it — this isn't the essay." required></textarea>
+            </div>
+            <div>
+              <label for="app-guardian">Parent or Guardian Name &amp; Phone (if under 18)</label>
+              <input type="text" id="app-guardian" name="guardian" placeholder="Optional if 18+">
+            </div>
+            <button type="submit" class="btn btn-large">Submit Application</button>
+            <p class="form-note">After submitting, send your essay, letter of recommendation, proof of enrollment, and cost summary to <a href="mailto:scholarship@stjamesbaptistchurch.org">scholarship@stjamesbaptistchurch.org</a>. We'll confirm receipt within 3 business days.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/images/sj-logo.jpg" alt="SJ Youth Ministry logo">
+            <span class="footer-brand-name">SJ Youth Ministry</span>
+          </div>
+          <p>A ministry of St. James Baptist Church<br>1105 North 44th St., Baton Rouge, LA 70802</p>
+          <p><a href="tel:2259241550">(225) 924-1550</a><br><a href="mailto:scholarship@stjamesbaptistchurch.org">scholarship@stjamesbaptistchurch.org</a></p>
+          <div class="social"><a href="#" title="Facebook (placeholder)" aria-label="Facebook">f</a></div>
+        </div>
+        <div><h4>Ministry</h4><ul><li><a href="about.html">About</a></li><li><a href="apply.html">Apply</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+        <div><h4>Connect</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="../stjames-baptist-sample/index.html">St. James Church</a></li></ul></div>
+        <div><h4>Tax Info</h4><ul><li>501(c)(3) under St. James Baptist Church</li><li>EIN: {{EIN}}</li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 St. James Baptist Church SJ Youth Ministry.</span><span class="build-credit">Built with care by Digital Ops Systems.</span></div>
+    </div>
+  </footer>
+
+  <script>document.querySelector('.nav-toggle')?.addEventListener('click', () => document.querySelector('nav ul').classList.toggle('open'));</script>
+
+</body>
+</html>

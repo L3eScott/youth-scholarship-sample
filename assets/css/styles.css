@@ -1,0 +1,674 @@
+/* ─── St. James Baptist Church — sample by Digital Ops Systems ─────── */
+/* Theme: bright, lively, spiritual. Cream-dominant surface. Gold leads.
+   Navy reserved for thin header strip, footer, and logo lockup only. */
+
+:root {
+  --navy: #0A1A4A;          /* brand deep navy (sparingly) */
+  --navy-mid: #1A3A8A;      /* royal blue secondary */
+  --gold: #C8922A;          /* brand primary gold */
+  --gold-light: #E8B84A;    /* highlight / hover gold */
+  --cream: #FDFAF3;         /* page bg — warm ivory */
+  --cream-soft: #F7F1E1;    /* alt section bg */
+  --ivory: #FFFFFF;         /* card surface */
+  --text: #1A1A2E;
+  --text-light: #5A5563;
+  --line: #ECE4CF;          /* warm divider */
+  --shadow: 0 1px 3px rgba(10,26,74,0.06);
+  --shadow-lg: 0 8px 24px rgba(10,26,74,0.10);
+  --shadow-gold: 0 6px 24px rgba(200,146,42,0.18);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--navy-mid); text-decoration: none; transition: color 0.15s ease; }
+a:hover { color: var(--gold); }
+
+h1, h2, h3, h4 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  line-height: 1.2;
+  margin: 0 0 0.75rem 0;
+}
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2.1rem; }
+h3 { font-size: 1.35rem; }
+h4 { font-size: 1.1rem; }
+p { margin: 0 0 1rem 0; }
+
+/* ─── Header / nav — slim navy strip, logo prominent ────────────────── */
+header {
+  background: var(--navy);
+  color: var(--ivory);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--gold);
+}
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--ivory);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.2px;
+}
+.brand:hover { color: var(--gold-light); }
+.brand img.logo-mark {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: transparent;
+}
+.brand .brand-name { line-height: 1.1; }
+.brand .brand-name small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+nav ul a {
+  color: rgba(255,255,255,0.88);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.15s ease;
+}
+nav ul a:hover { color: var(--gold-light); }
+nav ul a.cta {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+nav ul a.cta:hover { background: var(--gold-light); color: var(--navy); }
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--ivory);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ─── Hero — bright cream with prominent logo ───────────────────────── */
+.hero {
+  background:
+    radial-gradient(ellipse at top, rgba(200,146,42,0.08) 0%, transparent 60%),
+    linear-gradient(180deg, var(--cream) 0%, var(--cream-soft) 100%);
+  padding: 72px 24px 84px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  /* subtle decorative gold dot pattern */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(200,146,42,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.hero .inner {
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+}
+.hero .hero-logo {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 22px;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(10,26,74,0.18));
+}
+.hero h1 {
+  color: var(--navy);
+  font-size: 3.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+.hero h1 span {
+  display: block;
+  color: var(--gold);
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 12px;
+  letter-spacing: 0.4px;
+}
+.hero p.lead {
+  color: var(--text-light);
+  font-size: 1.15rem;
+  max-width: 640px;
+  margin: 14px auto 22px;
+}
+
+.service-times {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 22px 34px;
+  background: var(--ivory);
+  border-radius: 12px;
+  border-top: 4px solid var(--gold);
+  box-shadow: var(--shadow-lg);
+}
+.service-times .st-item { color: var(--text); min-width: 150px; }
+.service-times .st-day { color: var(--gold); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+.service-times .st-time { color: var(--navy); font-size: 22px; font-weight: 800; margin-top: 4px; font-family: "Playfair Display", Georgia, serif; }
+.service-times .st-name { font-size: 13px; color: var(--text-light); }
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+/* ─── Buttons ──────────────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 28px;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+}
+.btn:hover { background: var(--gold-light); color: var(--navy); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(200,146,42,0.28); }
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--navy);
+  box-shadow: none;
+}
+.btn-outline:hover { background: var(--gold); color: var(--navy); }
+.btn-navy { background: var(--navy); color: var(--ivory); box-shadow: 0 6px 24px rgba(10,26,74,0.18); }
+.btn-navy:hover { background: var(--navy-mid); color: var(--ivory); }
+.btn-large { padding: 16px 36px; font-size: 16px; }
+
+/* ─── Sections ─────────────────────────────────────────────────────── */
+.section {
+  padding: 72px 24px;
+}
+.section.alt { background: var(--cream-soft); }
+.section.ivory { background: var(--ivory); }
+.section .inner { max-width: 1100px; margin: 0 auto; }
+.section-head {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 44px;
+}
+.section-label {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 12px;
+  position: relative;
+  padding: 0 14px;
+}
+.section-label::before, .section-label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+.section-label::before { right: 100%; }
+.section-label::after { left: 100%; }
+.section-head p {
+  color: var(--text-light);
+  font-size: 17px;
+  margin-top: 8px;
+}
+
+/* ─── Pastor feature — portrait + bio side by side ──────────────────── */
+.pastor-feature {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 56px;
+  align-items: center;
+  background: var(--ivory);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--line);
+  max-width: 980px;
+  margin: 0 auto;
+}
+.pastor-feature img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  box-shadow: var(--shadow);
+}
+.pastor-feature .pastor-bio h2 { margin-top: 0; }
+.pastor-feature .pastor-bio .signature {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1.15rem;
+  margin-top: 20px;
+  display: block;
+}
+.pastor-feature .pastor-bio .title {
+  display: inline-block;
+  background: var(--cream-soft);
+  color: var(--navy);
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* ─── Couple feature — two portraits side by side with gold frames ──── */
+.couple-feature {
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.couple-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.couple-grid .portrait {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+}
+.couple-grid .portrait img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 6px;
+}
+.couple-grid .portrait .name {
+  margin-top: 12px;
+  padding-bottom: 6px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  color: var(--navy);
+  text-align: center;
+  font-weight: 700;
+}
+.couple-feature .caption {
+  margin-top: 28px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* ─── Map embed card ────────────────────────────────────────────────── */
+.map-card {
+  max-width: 980px;
+  margin: 0 auto;
+  background: var(--ivory);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  min-height: 400px;
+}
+.map-card iframe {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+.map-card .map-info {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.map-card .map-info h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+.map-card .map-info .addr {
+  color: var(--text);
+  font-size: 17px;
+  margin: 14px 0 18px;
+  line-height: 1.5;
+}
+.map-card .map-info .meta { color: var(--text-light); font-size: 14px; margin-bottom: 8px; }
+.map-card .map-info .meta strong { color: var(--navy); font-weight: 700; }
+.map-card .map-info .directions {
+  margin-top: 22px;
+  display: inline-block;
+  align-self: flex-start;
+}
+@media (max-width: 880px) {
+  .couple-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .couple-grid .portrait img { height: 240px; }
+  .map-card { grid-template-columns: 1fr; }
+  .map-card iframe { min-height: 280px; }
+  .map-card .map-info { padding: 28px; }
+}
+@media (max-width: 540px) {
+  .couple-grid .portrait img { height: 180px; }
+}
+
+/* ─── Cards / grids ────────────────────────────────────────────────── */
+.cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 36px; }
+.cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 32px; }
+.card {
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px;
+  transition: box-shadow 0.18s ease, transform 0.12s ease, border-color 0.18s ease;
+}
+.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: var(--gold-light); }
+.card .icon {
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 18px;
+  color: var(--navy);
+  box-shadow: var(--shadow-gold);
+}
+.card h3 { margin-bottom: 10px; color: var(--navy); }
+.card p { color: var(--text-light); font-size: 15px; margin: 0; }
+.card a { color: var(--gold); font-weight: 600; }
+.card a:hover { color: var(--navy); }
+
+/* ─── Page hero (interior pages, smaller) ──────────────────────────── */
+.page-hero {
+  background:
+    radial-gradient(ellipse at top, rgba(200,146,42,0.07) 0%, transparent 60%),
+    linear-gradient(180deg, var(--cream) 0%, var(--cream-soft) 100%);
+  padding: 48px 24px 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(200,146,42,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.page-hero > * { position: relative; }
+.page-hero img.hero-logo {
+  width: 96px;
+  height: 96px;
+  display: block;
+  margin: 0 auto 16px;
+  filter: drop-shadow(0 4px 14px rgba(10,26,74,0.18));
+}
+.page-hero .section-label { margin-bottom: 14px; }
+.page-hero h1 { color: var(--navy); font-size: 2.4rem; }
+.page-hero p { color: var(--text-light); max-width: 640px; margin: 14px auto 0; font-size: 1.05rem; }
+
+/* ─── Forms ────────────────────────────────────────────────────────── */
+form { display: grid; gap: 18px; max-width: 640px; margin: 0 auto; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+input, textarea, select {
+  width: 100%;
+  font: inherit;
+  padding: 13px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  background: var(--ivory);
+  color: var(--text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+input:focus, textarea:focus, select:focus {
+  outline: 0;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(200,146,42,0.15);
+}
+textarea { resize: vertical; min-height: 140px; }
+.form-note { font-size: 13px; color: var(--text-light); margin-top: -4px; }
+
+/* ─── Sermon list ──────────────────────────────────────────────────── */
+.sermon-list { display: grid; gap: 16px; margin-top: 32px; }
+.sermon-card {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 22px;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: box-shadow 0.15s ease;
+}
+.sermon-card:hover { box-shadow: var(--shadow-lg); }
+.sermon-card .date-block {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  color: var(--navy);
+  border-radius: 10px;
+  padding: 12px 6px;
+  text-align: center;
+}
+.sermon-card .date-block .mo { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+.sermon-card .date-block .day { font-size: 26px; font-weight: 800; line-height: 1; margin-top: 2px; font-family: "Playfair Display", serif; }
+.sermon-card .meta h4 { margin: 0 0 4px 0; }
+.sermon-card .meta p { margin: 0; font-size: 13px; color: var(--text-light); }
+.sermon-card .play {
+  background: var(--navy);
+  color: var(--gold-light);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.sermon-card .play:hover { background: var(--gold); color: var(--navy); }
+
+/* ─── Callout ──────────────────────────────────────────────────────── */
+.callout {
+  background: var(--ivory);
+  border-left: 5px solid var(--gold);
+  padding: 28px 32px;
+  border-radius: 0 10px 10px 0;
+  margin: 28px auto;
+  max-width: 760px;
+  box-shadow: var(--shadow);
+}
+.callout h3 { margin-top: 0; }
+
+/* ─── Footer — kept warm-navy for grounded contrast ─────────────────── */
+footer {
+  background: linear-gradient(180deg, var(--navy) 0%, #050d2a 100%);
+  color: rgba(255,255,255,0.78);
+  padding: 60px 24px 24px;
+  font-size: 14px;
+  border-top: 4px solid var(--gold);
+}
+footer .inner { max-width: 1100px; margin: 0 auto; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+footer h4 { color: var(--gold-light); font-size: 13px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; font-family: "Inter", sans-serif; }
+footer ul { list-style: none; padding: 0; margin: 0; }
+footer ul li { margin-bottom: 10px; }
+footer a { color: rgba(255,255,255,0.78); }
+footer a:hover { color: var(--gold-light); }
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.footer-brand img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+.footer-brand-name { color: var(--ivory); font-weight: 800; font-size: 17px; font-family: "Playfair Display", serif; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.14);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+}
+.footer-bottom .build-credit { color: rgba(255,255,255,0.5); font-size: 12px; }
+
+.social { display: flex; gap: 12px; margin-top: 14px; }
+.social a {
+  width: 38px;
+  height: 38px;
+  background: rgba(255,255,255,0.08);
+  color: var(--gold-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.social a:hover { background: var(--gold); color: var(--navy); }
+
+/* ─── Visit info ───────────────────────────────────────────────────── */
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  margin-top: 32px;
+}
+.visit-block { background: var(--ivory); padding: 32px; border-radius: 12px; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.visit-block h3 { margin-top: 0; }
+.visit-block p { color: var(--text-light); }
+
+/* ─── Ornament divider ─────────────────────────────────────────────── */
+.ornament {
+  text-align: center;
+  margin: 32px auto;
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 8px;
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 880px) {
+  h1 { font-size: 2.1rem; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero { padding: 56px 20px 64px; }
+  .section { padding: 56px 20px; }
+  .cards-3, .cards-2 { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .visit-grid { grid-template-columns: 1fr; }
+  .pastor-feature { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
+  .sermon-card { grid-template-columns: 80px 1fr; }
+  .sermon-card .play { grid-column: 1 / -1; justify-self: end; }
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--navy);
+    flex-direction: column;
+    padding: 18px 22px;
+    gap: 14px;
+    border-bottom: 3px solid var(--gold);
+  }
+  nav ul.open { display: flex; }
+  nav ul a.cta { width: 100%; text-align: center; }
+  .nav-toggle { display: block; }
+  .brand .brand-name { font-size: 15px; }
+}
+@media (max-width: 540px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .service-times { flex-direction: column; gap: 12px; align-items: flex-start; padding: 18px 22px; }
+  .hero .hero-logo { width: 110px; height: 110px; }
+  .hero h1 { font-size: 1.85rem; }
+}
