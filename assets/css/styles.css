@@ -129,8 +129,25 @@ nav ul a {
   font-weight: 500;
   padding: 8px 0;
   transition: color 0.15s ease;
+  position: relative;
 }
 nav ul a:hover { color: var(--gold-light); }
+
+/* Active tab — gold bar above showing which page you're on */
+nav ul a.active { color: var(--gold-light); }
+nav ul a.active::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 0 12px rgba(200,146,42,0.5);
+}
+
 nav ul a.cta {
   background: var(--gold);
   color: var(--navy);
@@ -140,6 +157,8 @@ nav ul a.cta {
   letter-spacing: 0.3px;
 }
 nav ul a.cta:hover { background: var(--gold-light); color: var(--navy); }
+nav ul a.cta.active { background: var(--gold-light); }
+nav ul a.cta.active::before { width: 44px; }
 
 .nav-toggle {
   display: none;
